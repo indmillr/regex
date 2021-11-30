@@ -149,5 +149,31 @@ let result = timRegex.test(timStr);
 
 // Check for ALL or NONE
 let favWord = "favorite";
-let favRegex = /change/;
+let favRegex = /favou?rite/;
 let result = favRegex.test(favWord);
+
+// Positive and Negative Lookahead
+let sampleWord = "astronaut";
+let pwRegex = /(?=\w{6})(?=\w*\d{2})/;
+let result = pwRegex.test(sampleWord);
+
+// Check for Mixed Grouping of Characters
+let myString = "Eleanor Roosevelt";
+let myRegex = /(Franklin|Eleanor).*Roosevelt/;
+let result = myRegex.test(myString);
+
+// Reuse Patterns Using Capture Groups
+let repeatNum = "42 42 42";
+let reRegex = /^(\d+)\s\1\s\1$/;
+let result = reRegex.test(repeatNum);
+
+// Use Capture Groups to Search and Replace
+let str = "one two three";
+let fixRegex = /(\w+)\s(\w+)\s(\w+)/;
+let replaceText = "$3 $2 $1";
+let result = str.replace(fixRegex, replaceText);
+
+// Remove Whitespace from Start to End
+let hello = "   Hello, World!   ";
+let wsRegex = /^\s+|\s+$/g;
+let result = hello.replace(wsRegex, "");
