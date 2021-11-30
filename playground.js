@@ -53,3 +53,101 @@ let result = quoteSample.match(myRegex);
 let quoteSample = "3 blind mice.";
 let myRegex = /[^aeiou0-9]/gi;
 let result = quoteSample.match(myRegex);
+
+// match characters that occur one or more times
+let difficultSpelling = "Mississippi";
+let myRegex = /s+/gi;
+let result = difficultSpelling.match(myRegex);
+
+// match characters that occur Zero or More Times
+let chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!";
+let chewiwRegex = /A*/;
+let result = chewieQuote.match(chewiwRegex);
+
+// Find characters with Lazy Matching
+let text = "<h1>Winter is coming</h1>";
+let myRegex = /<[a-z0-9]*?>/gi;
+let result = text.match(myRegex);
+
+// Find one or more criminals in a hunt
+let reCriminals = /C+/;
+
+// Match Beginning String Patterns
+let rickyAndCal = "Cal and Ricky both like racing.";
+let calRegex = /^Cal/;
+let result = calRegex.test(rickyAndCal);
+
+// Match Ending String Patterns
+let caboose = "The last car on a train is the caboose";
+let lastRegex = /caboose$/;
+let result = lastRegex.test(caboose);
+
+// Match ALL letters and numbers
+let quoteSample = "The five boxing wizards jump quickly.";
+let alphabetRegexV2 = /\w/g;
+let result = quoteSample.match(alphabetRegexV2).length;
+
+// Match everything EXCEPT letters and numbers
+let quoteSample = "The five boxing wizards jump quickly.";
+let nonAlphabetRegex = /\W/g;
+let result = quoteSample.match(nonAlphabetRegex).length;
+
+// Match ALL numbers
+let movieName = "2001: A Space Odyssey";
+let numRegex = /\d/g;
+let result = movieName.match(numRegex).length;
+
+// Match all NON-numbers
+let movieName = "2001: A Space Odyssey";
+let noNumRegex = /\D/g;
+let result = movieName.match(noNumRegex).length;
+
+// Restrict Possible Usernames
+// 1. Username can only use alpha-numeric characters
+// 2. The only numbers in the username have to be at the end.
+// 3. There can be a Zero or more at the end.
+// 4. Username cannot start with a number
+// 5. Username letters can be lowercase and uppercase
+// 6. Usernames have to be at least two characters long.
+// 7. A two-character username can onlyu use alphabet letters as characters.
+let username = "JackOfAllTrades";
+let userCheck = /^[a-z][a-z]+\d*$|^[a-z]\d\d+$/i;
+// ^ -- start of input
+// [a-z] -- first character is a letter
+// [a-z]+ -- following characters are letters
+// \d*$ -- input ends with 0 or more digits
+// | -- OR
+// ^[a-z] -- first character is a letter
+// \d\d+ -- following characters are 2 or more digits
+// $ -- end of input
+let result = userCheck.test(username);
+
+// Match Whitespace
+let sample = "Whitespace is important in separating words";
+let countWhiteSpace = /\s/g;
+let result = sample.match(countWhiteSpace);
+
+// Match NON-whitespace characters
+let sample = "Whitespace is important in separating words";
+let countNonWhiteSpace = /\S/g;
+let result = sample.match(countNonWhiteSpace);
+
+// Specify Upper and Lower number of matches
+let ohStr = "Ohhh no";
+let ohRegex = /oh{3,6}\sno/i;
+let result = ohRegex.test(ohStr);
+
+// Specify ONLY the Lower number of matches
+let haStr = "Hazzzzah";
+let haRegex = /haz{4,}ah/i;
+let result = haRegex.test(haStr);
+
+// Specify EXACT number of matches
+let timStr = "Timmmmber";
+let timRegex = /tim{4}ber/i;
+let result = timRegex.test(timStr);
+
+// Check for ALL or NONE
+let favWord = "favorite";
+let favRegex = /change/;
+let result = favRegex.test(favWord);
