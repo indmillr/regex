@@ -1,3 +1,5 @@
+// A cheatsheet of common regular expression patterns
+
 /abc/ // A sequence of characters
 /[abc]/ // Any character from a set of characters
 /[^abc]/ // Any character NOT in a set of characters
