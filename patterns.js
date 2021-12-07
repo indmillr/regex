@@ -9,3 +9,10 @@
 /x{2,4}/ // Two to four occurrences
 /(abc)/ // A group
 /a|b|c/ // Any one of several patterns
+/\d/ // Any digit character
+/\w/ // Any alphanumeric character
+/\s/ // Any whitespace character
+/./ // Any character except newlines
+/\b/ // A word boundary
+/^/ // Start of input
+/$/ // End of input
